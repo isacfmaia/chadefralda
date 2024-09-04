@@ -1,0 +1,50 @@
+body {
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f0f0f0;
+	margin: 0;
+}
+
+.container {
+	text-align: center;
+}
+
+.checkmark {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #28a745;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	animation: pop 0.5s ease-in-out;
+}
+
+.checkmark:after {
+	content: '✔';
+	font-size: 50px;
+	color: white;
+}
+
+@keyframes pop {
+	0% { transform: scale(0); }
+	100% { transform: scale(1); }
+}
+
+button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}

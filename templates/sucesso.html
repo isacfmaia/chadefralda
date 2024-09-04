@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Confirmação de Presença
+{% endblock %}
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='success.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div class="checkmark"></div>
+	<h1>Presença Confirmada!</h1>
+	<p>Obrigado por confirmar sua presença, {{ nome }}.</p>
+	<p>Você escolheu o tamanho {{ tamanho }}.</p>
+	<button onclick="window.location.href='https://www.google.com/maps/dir/?api=1&destination=Rua+Francisco+Lima+e+Silva%2C+496A%2C+Jangurussu%2C+60865-150'">Ver Endereço no Google Maps</button>
+	<button onclick="compartilharWhatsApp()">Compartilhar no WhatsApp</button>
+{% endblock %}
