@@ -6,9 +6,22 @@
     <title>{% block title %}Chá de Fraldas{% endblock %}</title>
 	{% block style %}{% endblock %}
 	<link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='messages.css') }}">
 </head>
 <body>
     <div class="container">
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="flash-messages">
+					<ul>
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		{% endwith %}
+		
         {% block content %}{% endblock %}
     </div>
     <footer>
