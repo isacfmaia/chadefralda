@@ -1,6 +1,9 @@
+.w300 {
+	width: 300px !important; 
+}
+
 form {
 	display: flex;
-	flex-direction: column;
 }
 
 body {
@@ -11,7 +14,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 80%;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -27,7 +30,7 @@ h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
 }
 
 table, th, td {
@@ -75,7 +78,7 @@ button:hover {
 
 .pagination a {
     color: black;
-    padding: 8px 16px;
+    padding: 5px 10px;
     text-decoration: none;
     border: 1px solid #ddd;
     margin: 0 4px;

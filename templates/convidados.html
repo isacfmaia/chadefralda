@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Lista de Convidados
+{% endblock %}
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='convidados.css') }}">
+{% endblock %}
+
+{% block content %}
+	<h1>Lista de Convidados</h1>
+	<form method="get">
+		<input type="text" name="nome" placeholder="Pesquisar por nome..." value="{{ nome }}" class="w300">
+		<button type="submit">Pesquisar</button>
+	</form>
+	
+	<br>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Adultos</th>
+				<th>Crianças</th>
+				<th>Tamanho da Fralda</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for convidado in convidados %}
+			<tr>
+				<td>{{ convidado.nome }}</td>
+				<td>{{ convidado.adultos }}</td>
+				<td>{{ convidado.criancas }}</td>
+				<td>{{ convidado.tamanho_fralda }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+	<div class="pagination">
+		{% for i in range(1, (total // per_page) + 2) %}
+			<a href="{{ url_for('convidados', page=i, nome=nome) }}">{{ i }}</a>
+		{% endfor %}
+	</div>
+	
+	<a href="{{ url_for('logout') }}"><button>Sair</button></a>
+	<a href="{{ url_for('exportar_excel') }}"><button type="button">Exportar para Excel</button></a>
+
+{% endblock %}

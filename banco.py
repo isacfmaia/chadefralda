@@ -16,12 +16,12 @@ CREATE TABLE IF NOT EXISTS estoque (
 cursor.executemany('''
 INSERT OR IGNORE INTO estoque (tamanho, quantidade) VALUES (?, ?)
 ''', [
-    ('RN', 10),
-    ('P', 15),
-    ('M', 20),
-    ('G', 20),
-    ('XG', 10),
-    ('XXG', 5)
+    ('RN', 1),
+    ('P', 5),
+    ('M', 15),
+    ('G', 25),
+    ('XG', 30),
+    ('XXG', 30)
 ])
 
 # Crie a tabela para registrar as respostas dos convidados
@@ -29,7 +29,8 @@ cursor.execute('''
 CREATE TABLE IF NOT EXISTS convidados (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT,
-    acompanhantes INTEGER,
+    adultos INTEGER,
+    criancas INTEGER,
     tamanho_fralda TEXT
 )
 ''')
