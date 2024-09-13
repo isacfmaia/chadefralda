@@ -12,6 +12,17 @@
 	<h1>Presença Confirmada!</h1>
 	<p>Obrigado por confirmar sua presença, {{ nome }}.</p>
 	<p>Você escolheu o tamanho {{ tamanho }}.</p>
-	<button onclick="window.location.href='https://www.google.com/maps/dir/?api=1&destination=Rua+Francisco+Lima+e+Silva%2C+496A%2C+Jangurussu%2C+60865-150'">Ver Endereço no Google Maps</button>
+	<button onclick="window.location.href='https://maps.app.goo.gl/k41PW4emiSRHvJJq9'">Ver no Mapa</button>
+	<button onclick="window.location.href='https://www.google.com/maps/dir/?api=1&destination=Rua+Coronel+Francisco+Flávio+Carneiro,+560+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+CE,+60813-690'">Como Chegar</button>
 	<button onclick="compartilharWhatsApp()">Compartilhar no WhatsApp</button>
+	<script>
+        function compartilharWhatsApp() {
+            var nome = "{{ nome }}";
+            var tamanho = "{{ tamanho }}";
+            var endereco = "Rua Coronel Francisco Flávio Carneiro, 560, Engenheiro Luciano Cavalcante, Fortaleza - CE, 60813-690";
+            var mensagem = "Olá, acabei de confirmar minha presença no Chá de Fraldas da Maria Tereza e escolhi o tamanho de fralda " + tamanho + ". O evento será em " + endereco + ". Não vejo a hora de te ver lá!";
+            var url = "https://wa.me/?text=" + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
 {% endblock %}
